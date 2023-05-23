@@ -15,7 +15,8 @@ def get_vid():
         video_id = item["id"]["videoId"]
         video_title = item["snippet"]["title"]
         video_link = f"https://www.youtube.com/watch?v={video_id}"
-        info['text'] = f"{video_title}: {video_link}\n"
+        info['text'] = f"{video_title}"
+        infolink['text'] = f"{video_link}"
 
 root = Tk()
 root['bg'] = '#fafafa'
@@ -45,8 +46,10 @@ btn = Button(frame_top, text='найти', command=get_vid)
 btn.pack()
 
 # Создаем текстовую надпись, в которую будет выводиться информация о погоде
-info = Label(frame_bottom, text='нашлось', bg='#ffb700', font=40)
+info = Label(frame_bottom, text='название', bg='#ffb700', font=40)
 info.pack()
+infolink = Label(frame_bottom, text='ссылка', bg='#ffb700', font=40)
+infolink.pack()
 
 # Запускаем постоянный цикл, чтобы программа работала
 root.mainloop()
